@@ -62,10 +62,6 @@
 
 网关同时暴露 OpenAI、Claude、Gemini 三套入口。`proxy` 服务根据**入口路径**判定客户端协议，根据**目标模型所在渠道类型**判定上游协议，必要时做双向（含流式）协议转换。详见 [请求处理流程](/develop/request-flow)。
 
-## 社区版与专业版
-
-社区版定义一组**中立扩展 Hook**（`internal/service/hooks.go` 等）。若无人注册，则以社区版基础行为运行；专业版在 `main.go` 启动前调用 `premium.Register()` 注册各 Hook（编辑版本标识、敏感词、SSRF、限流工厂、Meta Model、订阅、计费等）。社区核心不依赖专业版代码。详见 [版本分层模型](/develop/editions) 与 [扩展点 Hooks](/develop/extension-hooks)。
-
 ## 前端
 
 前端是独立的 React 19 + Vite + TS SPA（`web/`），构建产物通过 Go `embed` 内嵌进后端，由后端在 `/assets` 等路径提供，未匹配的非 API 路径回退到 `index.html` 以支持前端路由。

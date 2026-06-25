@@ -23,15 +23,6 @@ WindyPear Token Market 是一个面向 AI 平台与开发者生态的 **AI Token
 | 鉴权 | JWT（后台会话）、OIDC、WebAuthn/Passkey |
 | 部署 | 单一 Go 二进制，前端构建产物内嵌（`embed`） |
 
-## 版本分层
-
-项目分为 **社区版（Community Edition）** 与 **专业版（Professional Edition）**：
-
-- 社区版是一个可独立运行、生产可用的核心，提供了 AI API 管理、认证、计费和上游管理的完整基础能力，以 MIT 协议开源；
-- 专业版在社区版之上，通过中立的扩展 Hook 注入高级特性（例如 [Meta Model 路由 DSL](/develop/meta-model-dsl)），代码不混入社区核心。
-
-详见 [版本分层模型](/develop/editions)。
-
 ## 主要特性一览
 
 - OpenAI 兼容的 API 网关，同时兼容 Claude Messages 与 Gemini 协议；

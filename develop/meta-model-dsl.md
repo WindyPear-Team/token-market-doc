@@ -426,6 +426,8 @@ switch {
 - `parallel` 和 `judge` 当前会被拒绝，因为运行时未实现。
 - 价格不能为负数。
 - `billing_mode` 只能是 `actual` 或 `meta`，空值会按 `actual` 处理。
+- `provider` 为空时按 `meta` 处理，`provider_name` 为空时按 `Meta Module` 处理。
+- `expose_referenced_models` 只影响公开目录是否下发底层模型列表，不影响 DSL 校验和运行。
 
 常见错误：
 

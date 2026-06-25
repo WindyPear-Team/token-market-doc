@@ -94,7 +94,3 @@ go test ./...
 | 前端页面 | `web/src/pages/*.tsx` |
 | 前端 API 调用 | `web/src/lib/api.ts` |
 | 专业版特性 | `internal/premium/*`，通过 Hook 接入 |
-
-## 提交到正确的仓库
-
-`community/`、`web/`、`docs/` 都是独立 git 仓库。改了哪个就在哪个目录提交、推送，再在父仓库更新子模块引用。详见 [版本分层模型](/develop/editions)。

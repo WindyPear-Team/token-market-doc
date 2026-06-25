@@ -26,7 +26,6 @@ export default defineConfig({
         items: [
           { text: 'API 参考', link: '/develop/api-reference' },
           { text: 'Meta Model DSL', link: '/develop/meta-model-dsl' },
-          { text: '版本分层', link: '/develop/editions' }
         ]
       },
       {
@@ -112,7 +111,6 @@ export default defineConfig({
           items: [
             { text: '系统架构', link: '/develop/architecture' },
             { text: '代码结构', link: '/develop/project-structure' },
-            { text: '版本分层模型', link: '/develop/editions' },
             { text: '请求处理流程', link: '/develop/request-flow' }
           ]
         },

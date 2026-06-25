@@ -77,12 +77,6 @@ go build -buildvcs=false -o dist/flai-linux .
 cd community
 git add -A; git commit -m "Update community"; git push
 
-# 专业版（根目录）
-git add -A; git commit -m "Update premium"; git push
-```
-
-`web/` 与 `docs/` 同理，在各自目录内提交。详见 [版本分层模型](/develop/editions)。
-
 ## 文档站点构建
 
 本文档本身是 VitePress 站点（位于 `docs/site/`）：
