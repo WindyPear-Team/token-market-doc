@@ -50,19 +50,9 @@
 
 ## 邀请返佣对计费的影响
 
-如果开启邀请返佣，被邀请人产生消费时，平台会按 `referral_commission_rate` 把一部分金额返还给邀请人余额，并记录到返佣明细（`ReferralCommissionLog`）。返佣是**额外发放**给邀请人的，不改变被邀请人本次的扣费金额。
-
-## 相关系统设置
-
-| 设置键 | 默认 | 说明 |
-| --- | --- | --- |
-| `group_multiplier_mode` | `min` | 多分组倍率合并方式 |
-| `referral_commission_rate` | `0` | 邀请返佣比例 |
-| `pricing_endpoint_enabled` | `false` | 是否开放公开定价端点 `GET /api/pricing` |
-| `payment_currency_display_name` | `$` | 余额显示符号 |
+如果开启邀请返佣，被邀请人产生消费时，平台会按返佣比例把一部分金额返还给邀请人余额，并记录到返佣明细。返佣是**额外发放**给邀请人的，不改变被邀请人本次的扣费金额。
 
 ## 对账建议
 
-- 全平台日志：`GET /api/logs`；统计：`GET /api/stats`、`GET /api/channel-usage`；
 - 把日志按模型/渠道/时间聚合，与上游账单核对；
 - 关注阶梯价命中分布与倍率配置，确认实际毛利符合预期。

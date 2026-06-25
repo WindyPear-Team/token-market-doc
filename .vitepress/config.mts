@@ -1,10 +1,9 @@
 import { defineConfig } from 'vitepress'
 
-// WindyPear Token Market 文档站点配置
 export default defineConfig({
   lang: 'zh-CN',
-  title: 'WindyPear Token Market',
-  description: 'AI Token 市场与 API 网关 · 用户文档与开发文档',
+  title: 'Token Market',
+  description: 'API 网关与 AI Agent · 用户文档与开发文档',
   lastUpdated: true,
   cleanUrls: true,
   srcExclude: ['README.md'],
@@ -19,6 +18,7 @@ export default defineConfig({
 
     nav: [
       { text: '指南', link: '/guide/introduction' },
+      { text: '定价', link: '/buy' },
       { text: '管理员手册', link: '/admin/overview' },
       { text: '开发文档', link: '/develop/architecture' },
       {
@@ -32,8 +32,8 @@ export default defineConfig({
       {
         text: '相关链接',
         items: [
-          { text: 'GitHub', link: 'https://github.com/WindyPear-Team/windypear-api-backend' },
-          { text: '专业版', link: 'https://project.flweb.cn/tokenmarket' }
+          { text: 'GitHub', link: 'https://github.com/WindyPear-Team/token-market-backend' },
+          { text: '专业版', link: '/buy' }
         ]
       }
     ],
@@ -136,12 +136,12 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/WindyPear-Team/windypear-api-backend' }
+      { icon: 'github', link: 'https://github.com/WindyPear-Team/token-market-backend' }
     ],
 
     footer: {
       message: '基于 MIT 协议发布（社区版）',
-      copyright: 'Copyright © 2025 WindyPear Team'
+      copyright: 'Copyright © 2018 - 2026 WindyPear Team'
     },
 
     docFooter: {

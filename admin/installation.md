@@ -8,23 +8,6 @@
 - **Node.js** 与 **Yarn**（构建前端用，Yarn 4.x）；
 - 运行时默认使用 **SQLite**，无需额外数据库服务。
 
-## 仓库结构
-
-```text
-windypear-api/        私有「专业版」包装仓库
-  main.go             注册专业版特性后启动社区版 app
-  internal/premium/   专业版私有实现
-  community/          公共「社区版」仓库（独立 Go 项目，git 子模块）
-    main.go
-    internal/
-    web/              前端源码
-```
-
-- 社区版可以**独立构建运行**；
-- 专业版作为根模块，通过 `replace` 指向 `./community`，并在启动前注册扩展。
-
-详见 [版本分层模型](/develop/editions)。
-
 ## 从源码构建
 
 ### 1. 构建前端
@@ -44,12 +27,6 @@ yarn build
 ```bash
 cd community
 go build -buildvcs=false -o ../dist/flai-community.exe .
-```
-
-构建专业版（在根目录）：
-
-```bash
-go build -buildvcs=false -o dist/flai-premium.exe .
 ```
 
 或开发时直接运行：

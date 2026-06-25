@@ -4,18 +4,9 @@
 
 ## 认证与登录
 
-通过系统设置控制开放哪些登录方式：
+通过系统设置控制开放哪些登录方式。
 
-| 设置键 | 默认 | 说明 |
-| --- | --- | --- |
-| `oidc_enabled` | `false` | OIDC 单点登录 |
-| `passkey_enabled` | `false` | Passkey（WebAuthn） |
-| `password_login_enabled` | `true` | 密码登录 |
-| `password_registration_enabled` | `true` | 是否开放注册 |
-| `password_hcaptcha_enabled` | `false` | 注册/登录 hCaptcha 人机验证 |
-| `email_verification_required` | `false` | 是否强制邮箱验证 |
-
-相关密钥项：`oidc_issuer` / `oidc_client_id` / `oidc_client_secret` / `oidc_redirect_url`、`hcaptcha_site_key` / `hcaptcha_secret`。
+相关密钥项：`OIDC Issuer` / `OIDC Client ID` / `OIDC Client Secret` / `OIDC Redirect URL`、`hCaptcha SiteKey` / `hCaptcha Secret`。
 
 ::: tip 对外平台建议
 开放注册的公开平台建议：开启邮箱验证 + hCaptcha，配合 API 密钥的 IP/额度限制和限流，降低滥用与薅羊毛风险。
@@ -25,9 +16,8 @@
 
 | 设置键 | 默认 | 说明 |
 | --- | --- | --- |
-| `rate_limit_enabled` | `true` | 限流开关 |
-| `rate_limit_requests_per_minute` | `60` | 每分钟请求数 |
-| `rate_limit_burst` | `10` | 突发额度 |
+| `每分钟请求数` | `60` | 每分钟请求数 |
+| `突发额度` | `10` | 突发额度 |
 
 限流中间件作用于网关入口（`/v1`、`/v1beta`）。触发时返回 `429`。具体限流算法由注册的限流工厂决定（社区版可不启用强限流，专业版可注入更完整策略）。
 
@@ -39,8 +29,7 @@
 
 | 设置键 | 默认 | 说明 |
 | --- | --- | --- |
-| `sensitive_filter_enabled` | `false` | 开关 |
-| `sensitive_filter_scope` | `request` | 过滤范围：`request`（仅请求）或 `request_response`（请求+响应） |
+| `过滤范围` | `仅请求内容` | 过滤范围：仅请求或请求+响应 |
 | `sensitive_words` | 空 | 敏感词列表（管理员可见的敏感配置） |
 
 开启后，命中敏感词的内容会被拦截。`request_response` 范围会同时检查上游返回的内容，开销更大。词库与匹配实现可由专业版增强。

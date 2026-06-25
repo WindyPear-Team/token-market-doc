@@ -2,9 +2,9 @@
 layout: home
 
 hero:
-  name: "WindyPear Token Market"
-  text: "AI Token 市场与 API 网关"
-  tagline: 面向 AI 平台与开发者生态的统一计费、鉴权与上游路由网关
+  name: "Token Market"
+  text: "API 网关与 AI Agent"
+  tagline: 面向 AI 平台与开发者生态的统一计费、鉴权与上游路由网关，内置 Agent
   actions:
     - theme: brand
       text: 快速开始
@@ -25,16 +25,16 @@ features:
     details: 按 token 计费，支持输入/输出/缓存命中/图像/音频分项定价、阶梯价格、分组倍率与渠道倍率，每次请求都有完整账单记录。
   - icon: 🛡️
     title: 多种认证方式
-    details: 内置 API Key、OIDC 单点登录、Passkey（WebAuthn）与密码登录，密钥支持模型、IP 与额度限制。
+    details: 内置 OIDC 单点登录、Passkey（WebAuthn）与密码登录，密钥支持模型、IP 与额度限制。
   - icon: 🔀
     title: 上游渠道路由
     details: 多上游渠道管理，支持优先级、权重、轮询等路由算法，配合用户渠道与分组实现灵活的供给与定价分层。
   - icon: 💰
-    title: 完整运营能力
-    details: 余额钱包、在线充值（易支付 / OpenPayment）、每日签到、邀请返佣、公告与状态监控页，开箱即用。
+    title: 内置 Agent
+    details: 可以让用户快速进行云端控制的代码开发，开箱即用。
   - icon: 🏗️
-    title: 社区版 + 专业版
-    details: 公共社区核心通过中立扩展 Hook 暴露能力，专业版以包装层方式注入高级特性（如 Meta Model 路由），互不污染。
+    title: 元模型
+    details: 使用概率、强度等条件动态选择模型，并可向用户隐藏真实模型调用。
 ---
 
 ## 这是什么

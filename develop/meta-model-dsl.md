@@ -57,6 +57,10 @@ POST   /api/meta-models/validate
   "name": "meta-smart",
   "description": "按上下文和概率选择模型",
   "dsl": "call \"gpt-4o-mini\"",
+  "provider": "openai",
+  "provider_name": "OpenAI",
+  "provider_icon_url": "https://example.com/openai.png",
+  "expose_referenced_models": false,
   "billing_mode": "actual",
   "input_price": "0",
   "output_price": "0",
@@ -85,13 +89,16 @@ POST   /api/meta-models/validate
 | 字段 | 说明 |
 | --- | --- |
 | `model_name` | 元模型名 |
-| `provider` | 固定为 `meta` |
-| `provider_name` | 固定为 `Meta Module` |
+| `provider` | 公开目录里的供应商标识，默认 `meta`，可由管理员设置 |
+| `provider_name` | 公开目录里的供应商显示名，默认 `Meta Module`，可由管理员设置 |
+| `provider_icon_url` | 供应商图标 URL，可为空 |
 | `is_meta_model` | 固定为 `true` |
 | `meta_billing_mode` | `actual` 或 `meta` |
-| `referenced_models` | DSL 引用到的真实模型目录条目 |
+| `referenced_models` | DSL 引用到的真实模型目录条目，仅在 `expose_referenced_models` 开启时返回 |
 
-公开目录不会返回 DSL 源码。`referenced_models` 是完整的模型目录条目，且不会继续嵌套引用，便于前端展示价格和可用渠道。
+公开目录不会返回 DSL 源码。`referenced_models` 是完整的模型目录条目，且不会继续嵌套引用，便于前端展示价格和可用渠道。管理员关闭 `expose_referenced_models` 后，后端仍会用引用模型计算元模型价格和可用渠道，但不会把 `referenced_models` 下发给前端，模型广场也不会展示背后的真实模型列表。
+
+如果希望元模型在模型广场看起来像普通模型，可以把 `provider`、`provider_name` 和 `provider_icon_url` 设置成目标供应商展示信息，同时关闭 `expose_referenced_models`。
 
 ## 语言结构
 

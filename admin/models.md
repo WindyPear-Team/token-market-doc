@@ -21,43 +21,22 @@ Model(全局模型 gpt-4o)
 
 | 字段 | 说明 |
 | --- | --- |
-| `input_price` | 输入 |
-| `output_price` | 输出 |
-| `cached_input_price` | 缓存命中的输入 |
-| `cache_write_input_price` | 缓存写入 |
-| `cache_write_1h_input_price` | 1 小时缓存写入 |
-| `image_input_price` / `image_output_price` | 图像 |
-| `audio_input_price` / `audio_output_price` | 音频 |
-| `*_price_tiers` | 上述各项对应的**阶梯价格**列表 |
+| `输入价格` | 输入 |
+| `输出价格` | 输出 |
+| `缓存读取价格` | 缓存命中的输入 |
+| `缓存写入价格` | 缓存写入 |
+| `一小时缓存写入价格` | 1 小时缓存写入 |
+| `图像输入价格` / `图像输出价格` | 图像 |
+| `音频输入价格` / `音频输出价格` | 音频 |
 
-`provider` / `provider_icon_url` 用于在模型目录中展示供应商与图标。平台内置了常见供应商预设，也会根据模型名推断（如名字含 `claude` 推断为 Claude，含 `gemini`/`palm`/`bison` 推断为 Gemini，其余默认 OpenAI）。
-
-## 管理操作
-
-| 操作 | 接口 |
-| --- | --- |
-| 列表 | `GET /models` |
-| 创建 | `POST /models` |
-| 更新 | `PUT /models/:id` |
-| 删除 | `DELETE /models/:id` |
-| 同步（预览/应用） | `POST /models/sync/preview`、`/models/sync/apply` |
-| 价格同步 | `POST /models/prices/sync/preview`、`/models/prices/sync/apply` |
-| 渠道下模型配置列表 | `GET /channels/:id/models` |
-| 创建模型配置 | `POST /channels/:id/models` |
-| 更新模型配置 | `PUT /channel-models/:id` |
-| 删除模型配置 | `DELETE /channel-models/:id` |
-| 模型配置分组倍率 | `PUT /channel-models/:id/group-multipliers` |
+`供应商` / `供应商图标 URL` 用于在模型目录中展示供应商与图标。平台内置了常见供应商预设，也会根据模型名推断（如名字含 `claude` 推断为 Claude，含 `gemini`/`palm`/`bison` 推断为 Gemini，其余默认 OpenAI）。
 
 ## 上线一个模型
 
 1. **创建全局模型**，填写模型名与各维度价格；
-2. 在某个渠道下**创建模型配置**，指定该渠道的上游模型名（`upstream_model_name`）；
+2. 在某个渠道下**创建模型配置**，指定该渠道的上游模型名；
 3. 确保模型、模型配置、渠道、用户渠道**都启用**；
 4. 用户即可在 `GET /v1/models` 和模型目录中看到它。
-
-::: tip 上游名与对外名解耦
-对外模型名（如 `gpt-4o`）与上游真实名（如 `gpt-4o-2024-08-06`）可以不同。这样你可以统一对外命名，同时不同渠道指向不同的上游版本。
-:::
 
 ## 阶梯价格
 
