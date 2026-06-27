@@ -14,10 +14,14 @@
 | 路由 | 说明 |
 | --- | --- |
 | [POST /v1/videos/generations](/api/ai/routes/v1-videos-generations) | 旧版视频生成转发接口。 |
+| [GET /v1/videos/generations/:id](/api/ai/routes/v1-videos-generations-get) | 旧版视频任务查询兼容入口。 |
+| [POST /v1/videos/:id/remix](/api/ai/routes/v1-videos-id-remix) | Veo 等视频模型的 remix 兼容入口。 |
 | [POST /v1/video/tasks](/api/ai/routes/v1-video-tasks-post) | 创建视频任务兼容别名。 |
 | [GET /v1/video/tasks/:id](/api/ai/routes/v1-video-tasks-get) | 查询视频任务兼容别名。 |
 | [POST /v1/videos/tasks](/api/ai/routes/v1-videos-tasks-post) | 创建视频任务兼容别名。 |
 | [GET /v1/videos/tasks/:id](/api/ai/routes/v1-videos-tasks-get) | 查询视频任务兼容别名。 |
+| [POST /v1/seedance2/private-avatar](/api/ai/routes/v1-seedance2-private-avatar) | Seedance 2.0 私有数字人素材提交任务。 |
+| [GET /v1/tasks/:id](/api/ai/routes/v1-tasks-id) | 统一任务查询入口。 |
 
 ## 任务字段
 
@@ -32,4 +36,4 @@
 
 ## APIMart 能力映射
 
-APIMart 把视频按模型拆分为 Kling、Veo、Sora、Seedance、Wan、Vidu、Pixverse 等文档。本项目统一使用视频任务入口，模型差异通过 `model` 和上游兼容字段表达。
+APIMart 把视频按模型拆分为 Kling、Veo、Sora、Seedance、Wan、Vidu、Pixverse 等文档。本项目统一使用视频任务入口，模型差异通过 `model` 和上游兼容字段表达。Veo 的单独说明见 [Veo 视频接口](/api/ai/video-veo)，Seedance 的单独说明见 [Seedance 视频接口](/api/ai/video-seedance)。

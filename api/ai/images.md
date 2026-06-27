@@ -7,6 +7,7 @@
 | 路由 | 说明 |
 | --- | --- |
 | [POST /v1/images/generations](/api/ai/routes/v1-images-generations) | OpenAI 风格图片生成接口。 |
+| [GET /v1/images/generations/:id](/api/ai/routes/v1-images-generations-get) | 图片生成任务查询接口。 |
 | [POST /v1/images/edits](/api/ai/routes/v1-images-edits) | OpenAI 风格图片编辑接口。 |
 
 ## 调用要点
@@ -25,3 +26,4 @@
 | GPT Image、Gemini Image、Qwen Image、Seedream、Imagen 等文生图 | `POST /v1/images/generations`，通过 `model` 路由到对应上游。 |
 | 图片编辑、参考图、遮罩、重绘 | `POST /v1/images/edits`，按上游协议字段透传。 |
 | Midjourney 专用动作 | 当前没有独立 Midjourney 路由；如上游模型支持，可通过兼容字段转发。 |
+| Seedream 图片 | 查看 [Seedream 图片接口](/api/ai/images-seedream)。 |

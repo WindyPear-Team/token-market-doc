@@ -56,19 +56,29 @@ export default defineConfig({
           text: 'AI 接口',
           items: [
             { text: 'AI 全路由', link: '/api/ai/' },
+            { text: '账户与额度', link: '/api/ai/account' },
             { text: '模型列表', link: '/api/ai/models' },
             { text: 'OpenAI Chat / Completions', link: '/api/ai/openai-chat' },
             { text: 'OpenAI Responses', link: '/api/ai/responses' },
+            { text: '音频接口', link: '/api/ai/audio' },
+            { text: '审核接口', link: '/api/ai/moderations' },
+            { text: '上传接口', link: '/api/ai/uploads' },
             { text: '图片接口', link: '/api/ai/images' },
+            { text: 'Seedream 图片', link: '/api/ai/images-seedream' },
+            { text: 'Midjourney', link: '/api/ai/midjourney' },
             { text: 'OpenAI 风格视频', link: '/api/ai/video-openai' },
+            { text: 'Veo 视频', link: '/api/ai/video-veo' },
+            { text: 'Seedance 视频', link: '/api/ai/video-seedance' },
             { text: 'Kling 视频', link: '/api/ai/video-kling' },
             { text: 'Claude', link: '/api/ai/claude' },
             { text: 'Gemini', link: '/api/ai/gemini' }
           ]
         },
         {
-          text: 'AI 路由：模型',
+          text: 'AI 路由：账户与模型',
           items: [
+            { text: 'GET /v1/balance', link: '/api/ai/routes/v1-balance' },
+            { text: 'GET /v1/user/balance', link: '/api/ai/routes/v1-user-balance' },
             { text: 'GET /v1/models', link: '/api/ai/routes/v1-models' }
           ]
         },
@@ -77,13 +87,18 @@ export default defineConfig({
           items: [
             { text: 'POST /v1/chat/completions', link: '/api/ai/routes/v1-chat-completions' },
             { text: 'POST /v1/completions', link: '/api/ai/routes/v1-completions' },
-            { text: 'POST /v1/responses', link: '/api/ai/routes/v1-responses' }
+            { text: 'POST /v1/responses', link: '/api/ai/routes/v1-responses' },
+            { text: 'POST /v1/audio/speech', link: '/api/ai/routes/v1-audio-speech' },
+            { text: 'POST /v1/audio/transcriptions', link: '/api/ai/routes/v1-audio-transcriptions' },
+            { text: 'POST /v1/moderations', link: '/api/ai/routes/v1-moderations' }
           ]
         },
         {
           text: 'AI 路由：图片',
           items: [
+            { text: 'POST /v1/uploads/images', link: '/api/ai/routes/v1-uploads-images' },
             { text: 'POST /v1/images/generations', link: '/api/ai/routes/v1-images-generations' },
+            { text: 'GET /v1/images/generations/:id', link: '/api/ai/routes/v1-images-generations-get' },
             { text: 'POST /v1/images/edits', link: '/api/ai/routes/v1-images-edits' }
           ]
         },
@@ -96,7 +111,20 @@ export default defineConfig({
             { text: 'GET /v1/video/tasks/:id', link: '/api/ai/routes/v1-video-tasks-get' },
             { text: 'POST /v1/videos/tasks', link: '/api/ai/routes/v1-videos-tasks-post' },
             { text: 'GET /v1/videos/tasks/:id', link: '/api/ai/routes/v1-videos-tasks-get' },
-            { text: 'POST /v1/videos/generations', link: '/api/ai/routes/v1-videos-generations' }
+            { text: 'POST /v1/videos/generations', link: '/api/ai/routes/v1-videos-generations' },
+            { text: 'GET /v1/videos/generations/:id', link: '/api/ai/routes/v1-videos-generations-get' },
+            { text: 'POST /v1/videos/:id/remix', link: '/api/ai/routes/v1-videos-id-remix' },
+            { text: 'POST /v1/seedance2/private-avatar', link: '/api/ai/routes/v1-seedance2-private-avatar' },
+            { text: 'GET /v1/tasks/:id', link: '/api/ai/routes/v1-tasks-id' }
+          ]
+        },
+        {
+          text: 'AI 路由：Midjourney',
+          items: [
+            { text: 'POST /v1/midjourney/generations', link: '/api/ai/routes/v1-midjourney-generations' },
+            { text: 'POST /v1/midjourney/generations/imagine', link: '/api/ai/routes/v1-midjourney-generations-imagine' },
+            { text: 'POST /v1/midjourney/generations/:action', link: '/api/ai/routes/v1-midjourney-generations-action' },
+            { text: 'GET /v1/midjourney/:id', link: '/api/ai/routes/v1-midjourney-id' }
           ]
         },
         {
