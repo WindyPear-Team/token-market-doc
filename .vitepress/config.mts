@@ -20,6 +20,7 @@ export default defineConfig({
       { text: '指南', link: '/guide/introduction' },
       { text: '定价', link: '/buy' },
       { text: '管理员手册', link: '/admin/overview' },
+      { text: 'API', link: '/api/' },
       { text: '开发文档', link: '/develop/architecture' },
       {
         text: '参考',
@@ -38,6 +39,27 @@ export default defineConfig({
     ],
 
     sidebar: {
+      '/api/': [
+        {
+          text: '社区版接口',
+          items: [
+            { text: '总览', link: '/api/' },
+            { text: '公开接口', link: '/api/public' },
+            { text: '支付回调', link: '/api/payment' },
+            { text: '认证接口', link: '/api/auth' },
+            { text: 'AI 网关', link: '/api/gateway' },
+            { text: '管理员接口', link: '/api/admin' },
+            { text: '用户接口', link: '/api/user' }
+          ]
+        },
+        {
+          text: '高级版接口',
+          items: [
+            { text: '高级版接口', link: '/api/premium' }
+          ]
+        }
+      ],
+
       '/guide/': [
         {
           text: '开始使用',

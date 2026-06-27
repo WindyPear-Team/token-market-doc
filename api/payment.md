@@ -1,0 +1,30 @@
+# 支付回调接口
+
+支付回调接口由支付平台或浏览器回跳访问，不使用登录鉴权。签名校验和订单状态更新在后端完成。
+
+## 易支付
+
+| 方法 | 路径 | 参数 | 请求体 | 返回值 |
+| --- | --- | --- | --- | --- |
+| `GET` | `/api/payment/yipay/return` | 支付平台回跳参数，如 `out_trade_no`、`trade_no`、`money`、`sign`。 | 无 | 浏览器重定向到钱包页。 |
+| `GET` | `/api/payment/yipay/notify` | 支付平台通知参数。 | 无 | 文本成功/失败响应。 |
+| `POST` | `/api/payment/yipay/notify` | 支付平台通知参数。 | 表单或支付平台提交字段。 | 文本成功/失败响应。 |
+
+## OpenPayment
+
+| 方法 | 路径 | 参数 | 请求体 | 返回值 |
+| --- | --- | --- | --- | --- |
+| `GET` | `/api/payment/openpayment/return` | 支付平台回跳参数，如商户订单号、平台订单号、金额、签名。 | 无 | 浏览器重定向到钱包页。 |
+| `GET` | `/api/payment/openpayment/notify` | 支付平台通知参数。 | 无 | 文本成功/失败响应。 |
+| `POST` | `/api/payment/openpayment/notify` | 支付平台通知参数。 | 表单或支付平台提交字段。 | 文本成功/失败响应。 |
+| `GET` | `/api/payment/openpayment/submit/:order_no` | Path: `order_no`。 | 无 | HTML 提交页或错误文本。 |
+
+## 返回值
+
+通知接口成功时返回支付平台要求的成功文本；失败时返回 `fail` 或错误文本。
+
+浏览器回跳接口会重定向到：
+
+```text
+/dashboard/wallet?payment=<status>&order_no=<order_no>
+```
