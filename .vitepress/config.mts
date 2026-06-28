@@ -177,7 +177,8 @@ export default defineConfig({
             { text: '管理 API 密钥', link: '/guide/api-keys' },
             { text: '调用网关', link: '/guide/calling-the-api' },
             { text: '兼容协议', link: '/guide/protocols' },
-            { text: '模型与定价', link: '/guide/models-and-pricing' }
+            { text: '模型与定价', link: '/guide/models-and-pricing' },
+            { text: '高级聊天计划任务', link: '/guide/advanced-chat-tasks' }
           ]
         },
         {
